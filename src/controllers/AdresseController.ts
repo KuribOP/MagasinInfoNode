@@ -1,12 +1,13 @@
 import { CrudController } from "./CrudController"
 import { Request, Response } from 'express';
 import { Adresse } from "../models/AdresseModel";
+import { Client } from "../models/ClientModel";
 
 export class AdresseController extends
     CrudController {
 
     public read(req: Request, res: Response): void {
-        Adresse.findAll().then(adresses => res.json(adresses));
+        Adresse.findAll({ include: Client }).then(adresses => res.json(adresses));
     }
 
     public create(req: Request, res: Response): void {

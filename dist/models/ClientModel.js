@@ -48,4 +48,5 @@ Client.init({
     sequelize: database_1.sequelize,
     timestamps: false,
 });
-//Client.belongsTo(Facture, { foreignKey: "id_adresse" })
+AdresseModel_1.Adresse.hasOne(Client, { foreignKey: "id_adresse" });
+Client.belongsTo(AdresseModel_1.Adresse, { foreignKey: "id_adresse" });

@@ -46,5 +46,3 @@ Facture.init({
         sequelize,
         timestamps: false,
     });
-
-//Facture.hasOne(Adresse);

@@ -58,4 +58,5 @@ Client.init({
         timestamps: false,
     });
 
-//Client.belongsTo(Facture, { foreignKey: "id_adresse" })
+Adresse.hasOne(Client, { foreignKey: "id_adresse" });
+Client.belongsTo(Adresse, { foreignKey: "id_adresse" })
